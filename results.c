@@ -1,20 +1,20 @@
 #include <stdio.h>
 
 // This struct describes profile of a student
-struct student
+typedef struct
 {
     int id;
     char name[15];
     int maths, science, social, english;
-};
+} student;
 
 // This function will take a student and print its result
-void find_result(struct student);
+void find_result(student);
 
 void main()
 {
     // Here is a random data set
-    struct student students[5] = {
+    student students[5] = {
         {1, "Student A", 50, 70, 40, 30},
         {2, "Student B", 30, 60, 60, 80},
         {3, "Student C", 70, 60, 70, 30},
@@ -31,7 +31,7 @@ void main()
     if (id > 0 && id < 6) find_result(students[id - 1]);
 }
 
-void find_result(struct student s)
+void find_result(student s)
 {
     // Accessing the properties with dot syntax
     printf("Result of %s [ID = %d]\n", s.name, s.id);
